@@ -17,7 +17,7 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "pm",
       "styles": [
         "styles.css"
       ],
@@ -35,13 +35,14 @@
         "assets",
         "favicon.ico"
       ],
+      "platform": "server",
       "index": "index.html",
       "main": "main.server.ts",
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.server.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "pm",
       "styles": [
         "styles.css"
       ],
@@ -50,8 +51,7 @@
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      },
-      "platform": "server"
+      }
     }
   ],
   "e2e": {
@@ -79,7 +79,8 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "component": {
+    }
   }
 }
