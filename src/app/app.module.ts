@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-
+import { NgModule, PLATFORM_ID, APP_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { AppComponent } from './app.component';
 
 import { environment } from '../environments/environment';
-import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,8 +16,10 @@ import { isPlatformBrowser } from '@angular/common';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    SharedModule,
+    CoreModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
