@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "pm",
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "styles/material.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -45,7 +46,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "pm",
       "styles": [
-        "styles.css"
+        "styles.scss",
+        "styles/material.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
