@@ -18,7 +18,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     SharedModule,
-    CoreModule,
+    CoreModule.forRoot(),
     AppRoutingModule,
   ],
   providers: [],

@@ -1,7 +1,21 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
 
 @NgModule({
   imports: [],
   declarations: []
 })
-export class CoreModule { }
+export class CoreModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: CoreModule,
+      providers: [
+      ]
+    };
+  }
+
+  constructor (@Optional() @SkipSelf() parentModule: CoreModule) {
+    if (parentModule) {
+      throw new Error('CoreModule is already loaded. Import it in the AppModule only');
+    }
+  }
+}
