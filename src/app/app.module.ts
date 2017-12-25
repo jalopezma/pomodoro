@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { PomodoroModule } from './pomodoro/pomodoro.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    SharedModule,
+    PomodoroModule,
+    // SharedModule,
     CoreModule.forRoot(),
     AppRoutingModule,
   ],
