@@ -1,4 +1,10 @@
-<p>
-  timer works!
-</p>
-<div>{{ minutes }} : {{ seconds }}</div>
+<mat-card>
+  <div>
+    {{ minutes }} : {{ seconds }} | {{ progress }}
+    <mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
+  </div>
+
+  <a mat-button *ngIf="timerInterval == null" (click)="onPlay()"><mat-icon>play_arrow</mat-icon></a>
+  <a mat-button *ngIf="timerInterval != null" (click)="onPause()"><mat-icon>pause</mat-icon></a>
+  <a mat-button (click)="onReset()"><mat-icon>replay</mat-icon></a>
+</mat-card>
