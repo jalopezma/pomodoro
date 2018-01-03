@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { PomodoroContainerComponent } from './containers/pomodoro-container/pomodoro-container.component';
+
+const routes: Routes = [
+  {path: 'timer', component: PomodoroContainerComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

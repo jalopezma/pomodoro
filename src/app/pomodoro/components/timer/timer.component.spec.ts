@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SharedModule } from '../../../shared/shared.module';
 import { TimerComponent } from './timer.component';
 
 describe('TimerComponent', () => {
@@ -8,7 +9,10 @@ describe('TimerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TimerComponent ]
+      declarations: [ TimerComponent ],
+      imports: [
+        SharedModule,
+      ],
     })
     .compileComponents();
   }));
@@ -22,4 +26,13 @@ describe('TimerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  /**
+   * add testing:
+   * init with correct value.
+   * on finish
+   * on rest
+   * on pause
+   * on start
+   */
 });
